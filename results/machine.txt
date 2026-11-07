@@ -1,0 +1,11 @@
+CPU: AMD Ryzen AI 7 H 350 w/ Radeon 860M
+---------------------------------
+System
+OS Name:                       Microsoft Windows 11 Home
+OS Version:                    10.0.26300 N/A Build 26300
+Total Physical Memory:         32,042 MB
+---------------------------------
+Java Version: 
+java version "25.0.2" 2026-01-20 LTS
+Java(TM) SE Runtime Environment (build 25.0.2+10-LTS-69)
+Java HotSpot(TM) 64-Bit Server VM (build 25.0.2+10-LTS-69, mixed mode, sharing)

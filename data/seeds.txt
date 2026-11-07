@@ -1,0 +1,11 @@
+# Sơ đồ seed của bộ dữ liệu (sinh tự động bởi bench.DataGenerator)
+BASE_SEED    = 20261108
+seed(d,n,t)  = mix64( mix64( mix64(BASE_SEED ^ d.name().hashCode()) ^ n ) ^ t )
+mix64        = SplitMix64 finalizer
+RNG          = java.util.Random(seed); RANDOM dùng nextDouble() trong [0,1)
+FEW_KEYS_K   = 10   (giá trị = nextInt(K)/K)
+SAWTOOTH_RUN = 1000 (khúc liên tiếp độ dài cố định, mỗi khúc được sắp tăng)
+SIZES        = [1000, 10000, 100000, 300000, 700000, 1000000]
+TRIALS       = 30
+Seed KHÔNG phụ thuộc cutoff hay phiên bản thuật toán: mọi cutoff, V1 và V2
+trong cùng một trial dùng đúng một mảng đầu vào (thiết kế ghép cặp).
