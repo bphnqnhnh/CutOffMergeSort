@@ -1,0 +1,12 @@
+timestamp      = 2026-11-08T04:31:37.866804900
+java.version   = 25.0.2
+java.vm.name   = Java HotSpot(TM) 64-Bit Server VM
+os             = Windows 11 10.0
+cpus(logical)  = 16
+max heap (MB)  = 3959
+jvm args       = [-Xms4g, -Xmx4g, -XX:+UseSerialGC, -XX:+AlwaysPreTouch, -Xlog:gc:file=results/raw/20261108_0426/TN2_REVERSED_n100000.gc.log]
+gc             = [Copy, MarkSweepCompact]
+nanoTime res   = ~100 ns
+args           = --exp TN2 --n 100000 --dist REVERSED --trials 30 --cutoffs 0-40,44-80:4 --out results/raw/20261108_0426/TN2_REVERSED_n100000.csv
+configs        = 102
+dataset        = BASE_SEED=20261108 FEW_KEYS_K=10 SAWTOOTH_RUN=1000

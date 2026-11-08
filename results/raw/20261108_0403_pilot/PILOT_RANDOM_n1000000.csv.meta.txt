@@ -1,0 +1,12 @@
+timestamp      = 2026-11-08T04:04:37.591483100
+java.version   = 25.0.2
+java.vm.name   = Java HotSpot(TM) 64-Bit Server VM
+os             = Windows 11 10.0
+cpus(logical)  = 16
+max heap (MB)  = 3959
+jvm args       = [-Xms4g, -Xmx4g, -XX:+UseSerialGC, -XX:+AlwaysPreTouch, -Xlog:gc:file=results/raw/20261108_0403_pilot/PILOT_RANDOM_n1000000.gc.log]
+gc             = [Copy, MarkSweepCompact]
+nanoTime res   = ~100 ns
+args           = --exp PILOT --n 1000000 --dist RANDOM --trials 5 --out results/raw/20261108_0403_pilot/PILOT_RANDOM_n1000000.csv
+configs        = 82
+dataset        = BASE_SEED=20261108 FEW_KEYS_K=10 SAWTOOTH_RUN=1000

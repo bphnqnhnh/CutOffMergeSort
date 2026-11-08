@@ -1,0 +1,67 @@
+KẾT QUẢ PHÂN TÍCH (tự sinh bởi analysis/analyze.py)
+
+Quy tắc: L* = argmin median(r); vùng gần tối ưu = median(r) <= min*(1+1%); Wilcoxon ghép cặp, Holm, alpha=0.05
+
+== L* và mức tăng tốc so với không cutoff ==
+TN1 RANDOM   n=    1000 V1: L*=23 lá {15,16}    tăng tốc  27.0% (cutoff 7:  20.1%, 10:  23.5%)  gần tối ưu: 17-19, 23, 26, 28-29
+TN1 RANDOM   n=    1000 V2: L*=10 lá {7,8}      tăng tốc  14.4% (cutoff 7:  11.4%, 10:  14.4%)  gần tối ưu: 10, 12
+TN1 RANDOM   n=   10000 V1: L*=68 lá {39,40}    tăng tốc  18.2% (cutoff 7:   6.2%, 10:   9.7%)  gần tối ưu: 44, 48, 52, 56, 60, 64, 68, 72, 76
+TN1 RANDOM   n=   10000 V2: L*=26 lá {19,20}    tăng tốc   6.8% (cutoff 7:   2.0%, 10:   4.3%)  gần tối ưu: 22-26, 28-38
+TN1 RANDOM   n=  100000 V1: L*=76 lá {48,49}    tăng tốc  14.6% (cutoff 7:   6.2%, 10:   5.9%)  gần tối ưu: 52, 56, 60, 64, 68, 72, 76, 80
+TN1 RANDOM   n=  100000 V2: L*=14 lá {12,13}    tăng tốc   4.0% (cutoff 7:   2.3%, 10:   2.3%)  gần tối ưu: 13-24
+TN1 RANDOM   n=  300000 V1: L*=44 lá {36,37}    tăng tốc  13.4% (cutoff 7:   5.1%, 10:   7.7%)  gần tối ưu: 37-40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80
+TN1 RANDOM   n=  300000 V2: L*=72 lá {36,37}    tăng tốc   4.3% (cutoff 7:   2.5%, 10:   2.5%)  gần tối ưu: 22, 24, 26, 37-40, 44, 48, 52, 56, 60, 64, 68, 72
+TN1 RANDOM   n=  700000 V1: L*=60 lá {42,43}    tăng tốc  11.3% (cutoff 7:   4.5%, 10:   4.8%)  gần tối ưu: 44, 48, 52, 56, 60, 64, 68, 72, 76, 80
+TN1 RANDOM   n=  700000 V2: L*=22 lá {21,22}    tăng tốc   4.4% (cutoff 7:   1.8%, 10:   1.8%)  gần tối ưu: 22-32, 34-40
+TN1 RANDOM   n= 1000000 V1: L*=64 lá {61,62}    tăng tốc  10.3% (cutoff 7:   4.3%, 10:   4.6%)  gần tối ưu: 34, 36-40, 48, 52, 56, 60, 64, 68, 72, 76, 80
+TN1 RANDOM   n= 1000000 V2: L*=40 lá {30,31}    tăng tốc   3.4% (cutoff 7:   1.3%, 10:   1.6%)  gần tối ưu: 31-40, 44, 48, 52, 56, 60
+TN2 FEW_KEYS n=  100000 V1: L*=44 lá {24,25}    tăng tốc  19.7% (cutoff 7:   9.2%, 10:   9.2%)  gần tối ưu: 25-40, 44, 48
+TN2 FEW_KEYS n=  100000 V2: L*=33 lá {24,25}    tăng tốc  11.5% (cutoff 7:   4.2%, 10:   4.2%)  gần tối ưu: 25-40, 44
+TN2 REVERSED n=  100000 V1: L*=11 lá {6,7}      tăng tốc   8.7% (cutoff 7:   8.6%, 10:   8.5%)  gần tối ưu: 6-11
+TN2 REVERSED n=  100000 V2: L*= 3 lá {2,3}      tăng tốc   2.4% (cutoff 7:  -1.4%, 10:  -1.7%)  gần tối ưu: 3-5
+TN2 SAWTOOTH n=  100000 V1: L*=80 lá {48,49}    tăng tốc  17.8% (cutoff 7:   9.4%, 10:   9.4%)  gần tối ưu: 52, 56, 60, 64, 68, 72, 76, 80  (!) L* = biên khoảng đo
+TN2 SAWTOOTH n=  100000 V2: L*=33 lá {24,25}    tăng tốc  11.5% (cutoff 7:  10.4%, 10:  10.4%)  gần tối ưu: 25-40, 44
+TN2 SORTED   n=  100000 V1: L*=56 lá {48,49}    tăng tốc  34.8% (cutoff 7:  18.7%, 10:  18.4%)  gần tối ưu: 52, 56, 60, 64, 68, 72, 76, 80
+TN2 SORTED   n=  100000 V2: L*=76 lá {48,49}    tăng tốc  79.6% (cutoff 7:  64.3%, 10:  65.1%)  gần tối ưu: 76
+TN3 RANDOM   n=  200000 V1: L*=76 lá {48,49}    tăng tốc  13.9% (cutoff 7:   6.5%, 10:   6.3%)  gần tối ưu: 52, 56, 60, 64, 68, 76, 80
+TN3 RANDOM   n=  200000 V2: L*=30 lá {24,25}    tăng tốc   5.7% (cutoff 7:   1.8%, 10:   2.7%)  gần tối ưu: 26, 28-38
+
+== Cutoff 7 so với 10 (Wilcoxon, p đã hiệu chỉnh Holm) ==
+TN1 RANDOM   n=    1000 V1: t7/t10-1 = +4.73%  p_holm=5.2e-08  -> 10 nhanh hơn
+TN1 RANDOM   n=    1000 V2: t7/t10-1 = +2.30%  p_holm=0.046  -> 10 nhanh hơn
+TN1 RANDOM   n=   10000 V1: t7/t10-1 = +3.93%  p_holm=5.6e-09  -> 10 nhanh hơn
+TN1 RANDOM   n=   10000 V2: t7/t10-1 = +1.98%  p_holm=7.1e-05  -> 10 nhanh hơn
+TN1 RANDOM   n=  100000 V1: t7/t10-1 = +0.05%  p_holm=0.31  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN1 RANDOM   n=  100000 V2: t7/t10-1 = -0.35%  p_holm=0.35  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN1 RANDOM   n=  300000 V1: t7/t10-1 = +2.68%  p_holm=1.3e-08  -> 10 nhanh hơn
+TN1 RANDOM   n=  300000 V2: t7/t10-1 = +0.56%  p_holm=0.19  -> không khác biệt có ý nghĩa
+TN1 RANDOM   n=  700000 V1: t7/t10-1 = +0.59%  p_holm=0.12  -> không khác biệt có ý nghĩa
+TN1 RANDOM   n=  700000 V2: t7/t10-1 = +0.23%  p_holm=0.84  -> không khác biệt có ý nghĩa
+TN1 RANDOM   n= 1000000 V1: t7/t10-1 = +0.58%  p_holm=0.19  -> không khác biệt có ý nghĩa
+TN1 RANDOM   n= 1000000 V2: t7/t10-1 = +0.66%  p_holm=0.12  -> không khác biệt có ý nghĩa
+TN2 FEW_KEYS n=  100000 V1: t7/t10-1 = -0.02%  p_holm=0.54  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN2 FEW_KEYS n=  100000 V2: t7/t10-1 = -0.07%  p_holm=0.42  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN2 REVERSED n=  100000 V1: t7/t10-1 = +0.00%  p_holm=1  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN2 REVERSED n=  100000 V2: t7/t10-1 = -0.02%  p_holm=0.63  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN2 SAWTOOTH n=  100000 V1: t7/t10-1 = +0.20%  p_holm=0.48  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN2 SAWTOOTH n=  100000 V2: t7/t10-1 = -0.32%  p_holm=0.32  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN2 SORTED   n=  100000 V1: t7/t10-1 = -0.35%  p_holm=0.045  -> 7 nhanh hơn   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN2 SORTED   n=  100000 V2: t7/t10-1 = +4.30%  p_holm=0.35  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN3 RANDOM   n=  200000 V1: t7/t10-1 = +0.16%  p_holm=0.52  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+TN3 RANDOM   n=  200000 V2: t7/t10-1 = +0.32%  p_holm=0.54  -> không khác biệt có ý nghĩa   [7 và 10 CÙNG lớp lá: cùng một thuật toán ở n này]
+
+== Hệ số mũ log-log (slide W2: T ~ a N^b; N lg N cho b hơi lớn hơn 1) ==
+V1 cutoff 0       b = 1.244
+V1 cutoff 10      b = 1.272
+V1 L* của từng n  b = 1.271
+V2 cutoff 0       b = 1.267
+V2 cutoff 10      b = 1.282
+V2 L* của từng n  b = 1.280
+
+== Đối chiếu giả thuyết (dữ liệu RANDOM) ==
+H1 (cutoff giúp 10-15%): tăng tốc tại L* từ 3.4% đến 27.0%
+H2 (L* trong 5-15): 2/12 trường hợp
+H3 (L* không phụ thuộc n), V1: L* theo n = 1000:23, 10000:68, 100000:76, 300000:44, 700000:60, 1000000:64
+H3 (L* không phụ thuộc n), V2: L* theo n = 1000:10, 10000:26, 100000:14, 300000:72, 700000:22, 1000000:40
+H4 (đường cong phẳng quanh tối ưu): xem độ rộng vùng gần tối ưu ở trên và fig1
+H5 (L* của V2 < L* của V1): n=1000: V1=23, V2=10, n=10000: V1=68, V2=26, n=100000: V1=76, V2=14, n=300000: V1=44, V2=72, n=700000: V1=60, V2=22, n=1000000: V1=64, V2=40

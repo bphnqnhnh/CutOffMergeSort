@@ -1,1 +1,0 @@
-# Nhật ký: ngày, làm gì, giả thuyết, quan sát, quyết định

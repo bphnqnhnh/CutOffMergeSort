@@ -1,0 +1,46 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261108042612
+Username: BPHNQNHNH\ADMIN
+RunAs User: BPHNQNHNH\ADMIN
+Configuration Name: 
+Machine: BPHNQNHNH (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File scripts\run_all.ps1 -AffinityMask 0xFF -Cutoffs 0-40,44-80:4
+Process ID: 30312
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+GC=Serial  trials=30  affinity=0xFF  cutoffs=0-40,44-80:4  out=results/raw/20261108_0426
+Run order: TN2_SORTED_n100000, TN2_SAWTOOTH_n100000, TN1_RANDOM_n10000, TN2_REVERSED_n100000, TN1_RANDOM_n1000000, TN2_FEW_KEYS_n100000, TN1_RANDOM_n1000, TN1_RANDOM_n700000, TN1_RANDOM_n300000, TN1_RANDOM_n100000
+
+>>> TN2_SORTED_n100000   (04:26:12)
+
+>>> TN2_SAWTOOTH_n100000   (04:27:32)
+
+>>> TN1_RANDOM_n10000   (04:29:46)
+
+>>> TN2_REVERSED_n100000   (04:31:37)
+
+>>> TN1_RANDOM_n1000000   (04:34:40)
+
+>>> TN2_FEW_KEYS_n100000   (04:46:34)
+
+>>> TN1_RANDOM_n1000   (04:48:57)
+
+>>> TN1_RANDOM_n700000   (04:50:06)
+
+>>> TN1_RANDOM_n300000   (04:57:49)
+
+>>> TN1_RANDOM_n100000   (05:00:54)
+
+ALL DONE in 37 min -> results/raw/20261108_0426
+**********************
+Windows PowerShell transcript end
+End time: 20261108050328
+**********************

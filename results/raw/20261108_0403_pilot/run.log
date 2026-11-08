@@ -1,0 +1,32 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261108040343
+Username: BPHNQNHNH\ADMIN
+RunAs User: BPHNQNHNH\ADMIN
+Configuration Name: 
+Machine: BPHNQNHNH (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File scripts\run_all.ps1 -Pilot
+Process ID: 34616
+PSVersion: 5.1.26100.9818
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9818
+BuildVersion: 10.0.26100.9818
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+GC=Serial  trials=5  affinity=0x0  out=results/raw/20261108_0403_pilot
+Run order: PILOT_RANDOM_n100000, PILOT_RANDOM_n1000, PILOT_RANDOM_n1000000
+
+>>> PILOT_RANDOM_n100000   (04:03:43)
+
+>>> PILOT_RANDOM_n1000   (04:04:15)
+
+>>> PILOT_RANDOM_n1000000   (04:04:37)
+
+ALL DONE in 3 min -> results/raw/20261108_0403_pilot
+**********************
+Windows PowerShell transcript end
+End time: 20261108040624
+**********************
